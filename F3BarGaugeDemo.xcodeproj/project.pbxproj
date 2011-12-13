@@ -1,0 +1,297 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C68DA36E1497B71B00437005 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68DA36D1497B71B00437005 /* UIKit.framework */; };
+		C68DA3701497B71B00437005 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68DA36F1497B71B00437005 /* Foundation.framework */; };
+		C68DA3721497B71B00437005 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68DA3711497B71B00437005 /* CoreGraphics.framework */; };
+		C68DA3781497B71B00437005 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C68DA3761497B71B00437005 /* InfoPlist.strings */; };
+		C68DA37A1497B71B00437005 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C68DA3791497B71B00437005 /* main.m */; };
+		C68DA37E1497B71B00437005 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C68DA37D1497B71B00437005 /* AppDelegate.m */; };
+		C68DA3811497B71B00437005 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C68DA3801497B71B00437005 /* ViewController.m */; };
+		C68DA3841497B71B00437005 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C68DA3821497B71B00437005 /* ViewController.xib */; };
+		C68DA3911497B79000437005 /* F3BarGauge.m in Sources */ = {isa = PBXBuildFile; fileRef = C68DA3901497B79000437005 /* F3BarGauge.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C68DA3691497B71B00437005 /* F3BarGaugeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = F3BarGaugeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C68DA36D1497B71B00437005 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C68DA36F1497B71B00437005 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C68DA3711497B71B00437005 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C68DA3751497B71B00437005 /* F3BarGaugeDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "F3BarGaugeDemo-Info.plist"; sourceTree = "<group>"; };
+		C68DA3771497B71B00437005 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C68DA3791497B71B00437005 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C68DA37B1497B71B00437005 /* F3BarGaugeDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "F3BarGaugeDemo-Prefix.pch"; sourceTree = "<group>"; };
+		C68DA37C1497B71B00437005 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C68DA37D1497B71B00437005 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C68DA37F1497B71B00437005 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C68DA3801497B71B00437005 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C68DA3831497B71B00437005 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		C68DA38F1497B79000437005 /* F3BarGauge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F3BarGauge.h; sourceTree = "<group>"; };
+		C68DA3901497B79000437005 /* F3BarGauge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F3BarGauge.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C68DA3661497B71B00437005 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C68DA36E1497B71B00437005 /* UIKit.framework in Frameworks */,
+				C68DA3701497B71B00437005 /* Foundation.framework in Frameworks */,
+				C68DA3721497B71B00437005 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C68DA35E1497B71B00437005 = {
+			isa = PBXGroup;
+			children = (
+				C68DA38A1497B73D00437005 /* BarGauge */,
+				C68DA3731497B71B00437005 /* F3BarGaugeDemo */,
+				C68DA36C1497B71B00437005 /* Frameworks */,
+				C68DA36A1497B71B00437005 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C68DA36A1497B71B00437005 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C68DA3691497B71B00437005 /* F3BarGaugeDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C68DA36C1497B71B00437005 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C68DA36D1497B71B00437005 /* UIKit.framework */,
+				C68DA36F1497B71B00437005 /* Foundation.framework */,
+				C68DA3711497B71B00437005 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C68DA3731497B71B00437005 /* F3BarGaugeDemo */ = {
+			isa = PBXGroup;
+			children = (
+				C68DA37C1497B71B00437005 /* AppDelegate.h */,
+				C68DA37D1497B71B00437005 /* AppDelegate.m */,
+				C68DA37F1497B71B00437005 /* ViewController.h */,
+				C68DA3801497B71B00437005 /* ViewController.m */,
+				C68DA3821497B71B00437005 /* ViewController.xib */,
+				C68DA3741497B71B00437005 /* Supporting Files */,
+			);
+			path = F3BarGaugeDemo;
+			sourceTree = "<group>";
+		};
+		C68DA3741497B71B00437005 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C68DA3751497B71B00437005 /* F3BarGaugeDemo-Info.plist */,
+				C68DA3761497B71B00437005 /* InfoPlist.strings */,
+				C68DA3791497B71B00437005 /* main.m */,
+				C68DA37B1497B71B00437005 /* F3BarGaugeDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C68DA38A1497B73D00437005 /* BarGauge */ = {
+			isa = PBXGroup;
+			children = (
+				C68DA38F1497B79000437005 /* F3BarGauge.h */,
+				C68DA3901497B79000437005 /* F3BarGauge.m */,
+			);
+			name = BarGauge;
+			path = F3BarGaugeDemo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C68DA3681497B71B00437005 /* F3BarGaugeDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C68DA3871497B71B00437005 /* Build configuration list for PBXNativeTarget "F3BarGaugeDemo" */;
+			buildPhases = (
+				C68DA3651497B71B00437005 /* Sources */,
+				C68DA3661497B71B00437005 /* Frameworks */,
+				C68DA3671497B71B00437005 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = F3BarGaugeDemo;
+			productName = F3BarGaugeDemo;
+			productReference = C68DA3691497B71B00437005 /* F3BarGaugeDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C68DA3601497B71B00437005 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = C68DA3631497B71B00437005 /* Build configuration list for PBXProject "F3BarGaugeDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C68DA35E1497B71B00437005;
+			productRefGroup = C68DA36A1497B71B00437005 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C68DA3681497B71B00437005 /* F3BarGaugeDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C68DA3671497B71B00437005 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C68DA3781497B71B00437005 /* InfoPlist.strings in Resources */,
+				C68DA3841497B71B00437005 /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C68DA3651497B71B00437005 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C68DA37A1497B71B00437005 /* main.m in Sources */,
+				C68DA37E1497B71B00437005 /* AppDelegate.m in Sources */,
+				C68DA3811497B71B00437005 /* ViewController.m in Sources */,
+				C68DA3911497B79000437005 /* F3BarGauge.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C68DA3761497B71B00437005 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C68DA3771497B71B00437005 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C68DA3821497B71B00437005 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C68DA3831497B71B00437005 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C68DA3851497B71B00437005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C68DA3861497B71B00437005 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C68DA3881497B71B00437005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "F3BarGaugeDemo/F3BarGaugeDemo-Prefix.pch";
+				INFOPLIST_FILE = "F3BarGaugeDemo/F3BarGaugeDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C68DA3891497B71B00437005 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "F3BarGaugeDemo/F3BarGaugeDemo-Prefix.pch";
+				INFOPLIST_FILE = "F3BarGaugeDemo/F3BarGaugeDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C68DA3631497B71B00437005 /* Build configuration list for PBXProject "F3BarGaugeDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C68DA3851497B71B00437005 /* Debug */,
+				C68DA3861497B71B00437005 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C68DA3871497B71B00437005 /* Build configuration list for PBXNativeTarget "F3BarGaugeDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C68DA3881497B71B00437005 /* Debug */,
+				C68DA3891497B71B00437005 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C68DA3601497B71B00437005 /* Project object */;
+}
