@@ -149,9 +149,6 @@
     m_iOffIdx = iOffIdx;
     fRedraw = true;
   }
-  if(m_flMinLimit > 0.10) {
-    NSLog(@"Value: %0.02f  OnIdx: %d     OffIdx: %d", m_flValue, m_iOnIdx, m_iOffIdx);
-  }  
   
   // Are we doing peak?
   if( m_fHoldPeak && a_value > m_flPeakValue ) {
