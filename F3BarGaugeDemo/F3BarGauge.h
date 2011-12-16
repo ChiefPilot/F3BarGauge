@@ -37,7 +37,7 @@
 //------------------|  F3BarGauge class definition  |---------------------
 //------------------------------------------------------------------------
 //------------------------------------------------------------------------
-@interface F3BarGauge : UIControl
+@interface F3BarGauge : UIView
 {
   @private
     BOOL        m_fHoldPeak,

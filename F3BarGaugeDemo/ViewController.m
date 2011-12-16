@@ -33,6 +33,11 @@
   customThresholdBar.numBars = 15;
   customThresholdBar.warnThreshold = 0.45;
   customThresholdBar.dangerThreshold = 0.90;
+  customThresholdBar.normalBarColor = [UIColor blueColor];
+  customThresholdBar.warningBarColor = [UIColor cyanColor];
+  customThresholdBar.dangerBarColor = [UIColor magentaColor];
+  customThresholdBar.outerBorderColor = [UIColor clearColor];
+  customThresholdBar.innerBorderColor = [UIColor clearColor];
   
   customRangeBar.numBars = 20;
   customRangeBar.minLimit = 0.40;
