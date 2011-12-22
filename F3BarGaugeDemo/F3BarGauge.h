@@ -40,26 +40,27 @@
 @interface F3BarGauge : UIView
 {
   @private
-    BOOL        m_fHoldPeak,
-                m_fLitEffect;
-    float       m_flValue,
-                m_flPeakValue,
-                m_flMaxLimit,
-                m_flMinLimit,
-                m_flWarnThreshold,
-                m_flDangerThreshold;
-    int         m_iNumBars,
-                m_iOnIdx,
-                m_iOffIdx,
-                m_iPeakBarIdx,
-                m_iWarningBarIdx,
-                m_iDangerBarIdx;
-    UIColor     *m_clrOuterBorder,
-                *m_clrInnerBorder,
-                *m_clrBackground,
-                *m_clrNormal,
-                *m_clrWarning,
-                *m_clrDanger;
+    BOOL        m_fHoldPeak,            // YES = hold peak value enabled
+                m_fLitEffect,           // YES = draw segments with gradient "lit-up" effect
+                m_fReverseDirection;    // YES = top-to-bottom or right-to-left 
+    float       m_flValue,              // Current value being displayed
+                m_flPeakValue,          // Peak value seen since reset
+                m_flMaxLimit,           // Maximum displayable value
+                m_flMinLimit,           // Minimum displayable value    
+                m_flWarnThreshold,      // Warning threshold (segment color specified by m_clrWarning)
+                m_flDangerThreshold;    // Danger threshold (segment color specified by m_clrDanger)
+    int         m_iNumBars,             // Number of segments
+                m_iOnIdx,               
+                m_iOffIdx,              // Point at which segments are off
+                m_iPeakBarIdx,          // Index of peak value segment
+                m_iWarningBarIdx,       // Index of first warning segment
+                m_iDangerBarIdx;        // Index of first danger segment
+    UIColor     *m_clrOuterBorder,      // Color of outer border
+                *m_clrInnerBorder,      // Color of inner border
+                *m_clrBackground,       // Background color of gauge
+                *m_clrNormal,           // Normal segment color
+                *m_clrWarning,          // Warning segment color
+                *m_clrDanger;           // Danger segment color
 }
 
 @property (readwrite, nonatomic)  float     value;
@@ -71,6 +72,7 @@
 @property (readonly, nonatomic)   float     peakValue;
 @property (readwrite, nonatomic)  BOOL      holdPeak;
 @property (readwrite, nonatomic)  BOOL      litEffect;
+@property (readwrite, nonatomic)  BOOL      reverse;
 @property (readwrite, retain)     UIColor   *outerBorderColor;
 @property (readwrite, retain)     UIColor   *innerBorderColor;
 @property (readwrite, retain)     UIColor   *backgroundColor;

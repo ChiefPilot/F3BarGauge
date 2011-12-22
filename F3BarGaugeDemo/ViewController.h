@@ -11,6 +11,7 @@
 
 @interface ViewController : UIViewController
 @property (retain, nonatomic) IBOutlet F3BarGauge *horizontalBar;
+@property (retain, nonatomic) IBOutlet F3BarGauge *reversedBar;
 @property (retain, nonatomic) IBOutlet F3BarGauge *verticalBar;
 @property (retain, nonatomic) IBOutlet F3BarGauge *lcdBar;
 @property (retain, nonatomic) IBOutlet F3BarGauge *peakHoldBar;

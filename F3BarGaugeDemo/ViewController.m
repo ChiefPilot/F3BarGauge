@@ -10,6 +10,7 @@
 
 @implementation ViewController
 @synthesize horizontalBar;
+@synthesize reversedBar;
 @synthesize verticalBar;
 @synthesize lcdBar;
 @synthesize peakHoldBar;
@@ -30,6 +31,8 @@
 {
   [super viewDidLoad];
 
+  reversedBar.reverse = YES;
+  
   customThresholdBar.numBars = 15;
   customThresholdBar.warnThreshold = 0.45;
   customThresholdBar.dangerThreshold = 0.90;
@@ -43,7 +46,7 @@
   customRangeBar.minLimit = 0.40;
   customRangeBar.maxLimit = 0.60;
   
-  peakHoldBar.numBars = 20;
+  peakHoldBar.numBars = 10;
   peakHoldBar.holdPeak = YES;
 
   lcdBar.numBars = 20;
@@ -62,12 +65,14 @@
   [self setCustomThresholdBar:nil];
   [self setCustomRangeBar:nil];
   [self setValueLabel:nil];
-  [super viewDidUnload];
+  [self setReversedBar:nil];
   [self setHorizontalBar:nil];
   [self setVerticalBar:nil];
   [self setValueSlider:nil];
   [self setLcdBar:nil];
   [self setPeakHoldBar:nil];
+  
+  [super viewDidUnload];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -87,6 +92,7 @@
   [customThresholdBar release];
   [customRangeBar release];
   [valueLabel release];
+  [reversedBar release];
   [super dealloc];
 }
 
@@ -96,6 +102,7 @@
   
   // Update the bar gauges
   horizontalBar.value = valueSlider.value;
+  reversedBar.value = valueSlider.value;
   lcdBar.value = valueSlider.value;
   verticalBar.value = valueSlider.value;
   peakHoldBar.value = valueSlider.value;

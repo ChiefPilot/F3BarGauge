@@ -223,6 +223,7 @@
 @synthesize holdPeak = m_fHoldPeak;
 @synthesize peakValue = m_flPeakValue;
 @synthesize litEffect = m_fLitEffect;
+@synthesize reverse = m_fReverseDirection;
 @synthesize outerBorderColor = m_clrOuterBorder;
 @synthesize innerBorderColor = m_clrInnerBorder;
 @synthesize backgroundColor = m_clrBackground;
@@ -249,12 +250,13 @@
   m_flValue     = 0.0f;
   
   // Set defaults for bar display
-  m_fHoldPeak     = NO;
-  m_iNumBars      = 10;
-  m_iOffIdx       = 0;
-  m_iOnIdx        = 0;
-  m_iPeakBarIdx   = -1;
-  m_fLitEffect    = YES;
+  m_fHoldPeak         = NO;
+  m_iNumBars          = 10;
+  m_iOffIdx           = 0;
+  m_iOnIdx            = 0;
+  m_iPeakBarIdx       = -1;
+  m_fLitEffect        = YES;
+  m_fReverseDirection = NO;
   [self setWarnThreshold:0.60f];
   [self setDangerThreshold:0.80f];
   
@@ -314,8 +316,16 @@
   CGContextSetLineWidth(ctx, 1.0);
   for( int iX = 0; iX < m_iNumBars; ++iX ) {
     // Determine position for this bar
-    rectBar.origin.x = (fIsVertical) ? rectBounds.origin.x + 1 : (CGRectGetMinX(rectBounds) + iX * iBarSize);
-    rectBar.origin.y = (fIsVertical) ? (CGRectGetMaxY(rectBounds) - (iX + 1) * iBarSize) : rectBounds.origin.y + 1;
+    if(m_fReverseDirection) {
+      // Top-to-bottom or right-to-left
+      rectBar.origin.x = (fIsVertical) ? rectBounds.origin.x + 1 : (CGRectGetMaxX(rectBounds) - (iX+1) * iBarSize);
+      rectBar.origin.y = (fIsVertical) ? (CGRectGetMinY(rectBounds) + iX * iBarSize) : rectBounds.origin.y + 1;
+    }
+    else {
+      // Bottom-to-top or right-to-left
+      rectBar.origin.x = (fIsVertical) ? rectBounds.origin.x + 1 : (CGRectGetMinX(rectBounds) + iX * iBarSize);
+      rectBar.origin.y = (fIsVertical) ? (CGRectGetMaxY(rectBounds) - (iX + 1) * iBarSize) : rectBounds.origin.y + 1;
+    }
     
     // Draw top and bottom borders for bar
     CGContextAddRect(ctx, rectBar);
