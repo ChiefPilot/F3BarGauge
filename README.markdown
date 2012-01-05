@@ -1,7 +1,12 @@
+F3BarGauge
+==========
+
 Welcome!
 --------
 This demo contains the bar gauge control for iOS.   It has been
 tested on iOS 4.x and 5.x on iTouch, iPhone, and iPad devices.
+
+![Screenshot](https://raw.github.com/ChiefPilot/F3BarGauge/master/F3BarGauge.png "Screenshot of Component Demo App")
 
 If you find this control of use (or find bugs), I'd love to hear
 from you!   Drop a note to brad@flightiii.com with questions, comments, 
