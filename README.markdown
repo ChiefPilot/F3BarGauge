@@ -3,7 +3,7 @@ F3BarGauge
 
 Welcome!
 --------
-This demo contains the bar gauge control for iOS.   It has been
+This demo contains the LED bar gauge control for iOS.   It has been
 tested on iOS 4.x and 5.x on iTouch, iPhone, and iPad devices.
 
 ![Screenshot](https://raw.github.com/ChiefPilot/F3BarGauge/master/F3BarGauge.png "Screenshot of Component Demo App")
@@ -21,7 +21,7 @@ segmented/stacked LEDs, with several colors to indicate thresholds.
 This control replicates that look, using Quartz drawing primitives,
 and auto-adjusts to horizontal or vertical orientation. Additionally, 
 the colors, number of bars, peak hold, and other items are easily 
-customizable. 
+customized.
 
 
 Usage
@@ -35,9 +35,9 @@ Adding this control to your XCode project is straightforward :
 4.  Add an outlet to represent the bar gauge
 5.  Update your code to set the value property as appropriate.
 
-The demo code has multiple examples, including a version that
-customizes the gauge to look like an LCD flavor that looks cool
-for showing temperatures or fan speeds, for example.
+For more information have a look at the demo code, which 
+has multiple examples including a version that customizes the
+with an LCD-style appearance.  
 
 License
 -------
