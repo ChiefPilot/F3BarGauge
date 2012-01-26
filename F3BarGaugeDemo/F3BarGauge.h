@@ -49,12 +49,7 @@
                 m_flMinLimit,           // Minimum displayable value    
                 m_flWarnThreshold,      // Warning threshold (segment color specified by m_clrWarning)
                 m_flDangerThreshold;    // Danger threshold (segment color specified by m_clrDanger)
-    int         m_iNumBars,             // Number of segments
-                m_iOnIdx,               
-                m_iOffIdx,              // Point at which segments are off
-                m_iPeakBarIdx,          // Index of peak value segment
-                m_iWarningBarIdx,       // Index of first warning segment
-                m_iDangerBarIdx;        // Index of first danger segment
+    int         m_iNumBars;             // Number of segments
     UIColor     *m_clrOuterBorder,      // Color of outer border
                 *m_clrInnerBorder,      // Color of inner border
                 *m_clrBackground,       // Background color of gauge

@@ -40,14 +40,25 @@
 //------------------------------------------------------------------------
 //------------------------------------------------------------------------
 
-//===[ Category for private methods ]=====================================
+//===[ Extention for private-ish stuff ]==================================
 @interface F3BarGauge()
-  -(void) setDefaults;
-  -(void) drawBar:(CGContextRef)a_ctx
-         withRect:(CGRect) a_rect
-         andColor:(UIColor *)a_clr
-              lit:(BOOL)a_lit;
+{
+  @private
+    int             m_iOnIdx,               // Point at which segments are on
+                    m_iOffIdx,              // Point at which segments are off
+                    m_iPeakBarIdx,          // Index of peak value segment
+                    m_iWarningBarIdx,       // Index of first warning segment
+                    m_iDangerBarIdx;        // Index of first danger segment
+}
+
+// Private methods
+-(void) setDefaults;
+-(void) drawBar:(CGContextRef)a_ctx
+       withRect:(CGRect) a_rect
+       andColor:(UIColor *)a_clr
+            lit:(BOOL)a_lit;
 @end
+
 
 
 @implementation F3BarGauge
