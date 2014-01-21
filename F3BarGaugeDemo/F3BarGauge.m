@@ -1,7 +1,7 @@
 //
 //  F3BarGauge.m
 //
-//  Copyright (c) 2011 by Brad Benson
+//  Copyright (c) 2011-2014 by Brad Benson
 //  All rights reserved.
 //  
 //  Redistribution and use in source and binary forms, with or without 
@@ -28,8 +28,9 @@
 //  OF SUCH DAMAGE.
 //  
 
+//===[ Required headers ]=================================================
 
-// Pick up required headers
+// Our stuff
 #import "F3BarGauge.h"
 
 
@@ -43,12 +44,12 @@
 //===[ Extention for private-ish stuff ]==================================
 @interface F3BarGauge()
 {
-  @private
-    int             m_iOnIdx,               // Point at which segments are on
-                    m_iOffIdx,              // Point at which segments are off
-                    m_iPeakBarIdx,          // Index of peak value segment
-                    m_iWarningBarIdx,       // Index of first warning segment
-                    m_iDangerBarIdx;        // Index of first danger segment
+    float       _peakValue;             // Peak value seen since reset
+    int         m_iOnIdx,               // Point at which segments are on
+                m_iOffIdx,              // Point at which segments are off
+                m_iPeakBarIdx,          // Index of peak value segment
+                m_iWarningBarIdx,       // Index of first warning segment
+                m_iDangerBarIdx;        // Index of first danger segment
 }
 
 // Private methods
@@ -95,43 +96,15 @@
 
 
 //------------------------------------------------------------------------
-//  Method: dealloc
-//    Clean up instance when released
-//
--(void) dealloc
-{
-  // Clean up
-  [m_clrBackground release];
-  [m_clrOuterBorder release];
-  [m_clrInnerBorder release];
-  [m_clrNormal release];
-  [m_clrWarning release];
-  [m_clrDanger release];
-  
-  // Call parent
-  [super dealloc];
-}
-
-
-//------------------------------------------------------------------------
 //  Method: resetPeak
 //    Resets peak value.  
 //
 -(void) resetPeak
 {
   // Reset the value and redraw
-  m_flPeakValue = -INFINITY;
+  _peakValue = -INFINITY;
   m_iPeakBarIdx = -1;
   [self setNeedsDisplay];
-}
-
-
-//------------------------------------------------------------------------
-//  Method: value accessor
-//
--(float) value
-{
-  return m_flValue;
 }
 
 
@@ -143,10 +116,10 @@
   bool      fRedraw = false;
   
   // Save value
-  m_flValue = a_value;
+  _value = a_value;
   
   // Point at which bars start lighting up
-  int iOnIdx = (m_flValue >= m_flMinLimit) ?  0 : m_iNumBars;
+  int iOnIdx = (_value >= _minLimit) ?  0 : _numBars;
   if( iOnIdx != m_iOnIdx ) {
     // Changed - save it
     m_iOnIdx = iOnIdx;
@@ -154,7 +127,7 @@
   }
   
   // Point at which bars are no longer lit
-  int iOffIdx = ((m_flValue - m_flMinLimit) / (m_flMaxLimit - m_flMinLimit)) * m_iNumBars;
+  int iOffIdx = ((_value - _minLimit) / (_maxLimit - _minLimit)) * _numBars;
   if( iOffIdx != m_iOffIdx ) {
     // Changed - save it
     m_iOffIdx = iOffIdx;
@@ -162,10 +135,10 @@
   }
   
   // Are we doing peak?
-  if( m_fHoldPeak && a_value > m_flPeakValue ) {
+  if( _holdPeak && a_value > _peakValue ) {
     // Yes, save the peak bar index
-    m_flPeakValue = a_value;
-    m_iPeakBarIdx = MIN(m_iOffIdx, m_iNumBars - 1);
+    _peakValue = a_value;
+    m_iPeakBarIdx = MIN(m_iOffIdx, _numBars - 1);
   }
   
   // Redraw the display?
@@ -183,13 +156,13 @@
 - (void) setNumBars:(int)a_iNumBars
 {
   // Reset peak value to force it to be updated w/new bar index
-  m_flPeakValue = -INFINITY;
+  _peakValue = -INFINITY;
   
   // Save it, then update the thresholds
-  m_iNumBars = a_iNumBars;
-  [self setValue:m_flValue];
-  [self setWarnThreshold:m_flWarnThreshold];
-  [self setDangerThreshold:m_flDangerThreshold];
+  _numBars = a_iNumBars;
+  self.value = _value;
+  self.warnThreshold = _warnThreshold;
+  self.dangerThreshold = _dangerThreshold;
 }
 
 
@@ -201,9 +174,9 @@
 - (void) setWarnThreshold:(float)a_flWarnThreshold
 {
   // Save it and recompute values
-  m_flWarnThreshold = a_flWarnThreshold;
+  _warnThreshold = a_flWarnThreshold;
   m_iWarningBarIdx = ( !isnan(a_flWarnThreshold) && a_flWarnThreshold > 0.0f ) ?
-                                (int)( m_flWarnThreshold * (float)m_iNumBars ) :
+                                (int)( _warnThreshold * (float)_numBars ) :
                                 -1;
 }
 
@@ -216,31 +189,11 @@
 - (void) setDangerThreshold:(float)a_flDangerThreshold
 {
   // Save it and recompute values
-  m_flDangerThreshold = a_flDangerThreshold;
+  _dangerThreshold = a_flDangerThreshold;
   m_iDangerBarIdx = ( !isnan(a_flDangerThreshold) && a_flDangerThreshold > 0.0f ) ?
-                                (int)( m_flDangerThreshold * (float)m_iNumBars ) :
+                                (int)( _dangerThreshold * (float)_numBars ) :
                                 -1;
 }
-
-
-//------------------------------------------------------------------------
-//  Synthesized properties
-//
-@synthesize maxLimit = m_flMaxLimit;
-@synthesize minLimit = m_flMinLimit;
-@synthesize numBars = m_iNumBars;
-@synthesize warnThreshold = m_flWarning;
-@synthesize dangerThreshold = m_flDanger;
-@synthesize holdPeak = m_fHoldPeak;
-@synthesize peakValue = m_flPeakValue;
-@synthesize litEffect = m_fLitEffect;
-@synthesize reverse = m_fReverseDirection;
-@synthesize outerBorderColor = m_clrOuterBorder;
-@synthesize innerBorderColor = m_clrInnerBorder;
-@synthesize backgroundColor = m_clrBackground;
-@synthesize normalBarColor = m_clrNormal;
-@synthesize warningBarColor = m_clrWarning;
-@synthesize dangerBarColor = m_clrDanger;
 
 
 
@@ -256,28 +209,28 @@
   [self setBackgroundColor:[UIColor clearColor]];
   
   // Configure limits
-  m_flMaxLimit  = 1.0f;
-  m_flMinLimit  = 0.0f;
-  m_flValue     = 0.0f;
+  _maxLimit  = 1.0f;
+  _minLimit  = 0.0f;
+  _value     = 0.0f;
   
   // Set defaults for bar display
-  m_fHoldPeak         = NO;
-  m_iNumBars          = 10;
+  _holdPeak         = NO;
+  _numBars          = 10;
   m_iOffIdx           = 0;
   m_iOnIdx            = 0;
   m_iPeakBarIdx       = -1;
-  m_fLitEffect        = YES;
-  m_fReverseDirection = NO;
+  _litEffect        = YES;
+  _reverse = NO;
   [self setWarnThreshold:0.60f];
   [self setDangerThreshold:0.80f];
   
   // Set default colors
-  m_clrBackground       = [[UIColor blackColor] retain];
-  m_clrOuterBorder      = [[UIColor grayColor] retain];
-  m_clrInnerBorder      = [[UIColor blackColor] retain];
-  m_clrNormal           = [[UIColor greenColor] retain];
-  m_clrWarning          = [[UIColor yellowColor] retain];
-  m_clrDanger           = [[UIColor redColor] retain];
+  _backgroundColor       = [UIColor blackColor];
+  _outerBorderColor      = [UIColor grayColor];
+  _innerBorderColor      = [UIColor blackColor];
+  _normalBarColor           = [UIColor greenColor];
+  _warningBarColor          = [UIColor yellowColor];
+  _dangerBarColor           = [UIColor redColor];
   
   // Misc.
   self.clearsContextBeforeDrawing = NO;
@@ -301,13 +254,13 @@
   BOOL fIsVertical = (rectBounds.size.height >= rectBounds.size.width);
   if(fIsVertical) {
     // Adjust height to be an exact multiple of bar 
-    iBarSize = rectBounds.size.height / m_iNumBars;
-    rectBounds.size.height  = iBarSize * m_iNumBars;
+    iBarSize = rectBounds.size.height / _numBars;
+    rectBounds.size.height  = iBarSize * _numBars;
   }
   else {
     // Adjust width to be an exact multiple
-    iBarSize = rectBounds.size.width / m_iNumBars;
-    rectBounds.size.width = iBarSize * m_iNumBars;
+    iBarSize = rectBounds.size.width / _numBars;
+    rectBounds.size.width = iBarSize * _numBars;
   }
   
   // Compute size of bar
@@ -319,15 +272,15 @@
   CGContextClearRect(ctx, self.bounds); 
   
   // Fill background
-  CGContextSetFillColorWithColor(ctx, m_clrBackground.CGColor);
+  CGContextSetFillColorWithColor(ctx, _backgroundColor.CGColor);
   CGContextFillRect(ctx, rectBounds);
 
   // Draw LED bars
-  CGContextSetStrokeColorWithColor(ctx, m_clrInnerBorder.CGColor);
+  CGContextSetStrokeColorWithColor(ctx, _innerBorderColor.CGColor);
   CGContextSetLineWidth(ctx, 1.0);
-  for( int iX = 0; iX < m_iNumBars; ++iX ) {
+  for( int iX = 0; iX < _numBars; ++iX ) {
     // Determine position for this bar
-    if(m_fReverseDirection) {
+    if(_reverse) {
       // Top-to-bottom or right-to-left
       rectBar.origin.x = (fIsVertical) ? rectBounds.origin.x + 1 : (CGRectGetMaxX(rectBounds) - (iX+1) * iBarSize);
       rectBar.origin.y = (fIsVertical) ? (CGRectGetMinY(rectBounds) + iX * iBarSize) : rectBounds.origin.y + 1;
@@ -343,12 +296,12 @@
     CGContextStrokePath(ctx);
 
     // Determine color of bar
-    UIColor   *clrFill = m_clrNormal;
+    UIColor   *clrFill = _normalBarColor;
     if( m_iDangerBarIdx >= 0 && iX >= m_iDangerBarIdx ) {
-      clrFill = m_clrDanger;
+      clrFill = _dangerBarColor;
     }
     else if( m_iWarningBarIdx >= 0 && iX >= m_iWarningBarIdx ) {
-      clrFill = m_clrWarning;
+      clrFill = _warningBarColor;
     }
     
     // Determine if bar should be lit
@@ -369,7 +322,7 @@
   }
   
   // Draw border around the control
-  CGContextSetStrokeColorWithColor(ctx, m_clrOuterBorder.CGColor);
+  CGContextSetStrokeColorWithColor(ctx, _outerBorderColor.CGColor);
   CGContextSetLineWidth(ctx, 2.0);
   CGContextAddRect(ctx, CGRectInset(rectBounds, 1, 1));
   CGContextStrokePath(ctx);
@@ -388,7 +341,7 @@
   // Is the bar lit?
   if(a_fLit) {
     // Are we doing radial gradient fills?
-    if(m_fLitEffect) {
+    if(_litEffect) {
       // Yes, set up to draw the bar as a radial gradient
       static  size_t  num_locations = 2;
       static  CGFloat locations[]   = { 0.0, 0.5 };
@@ -439,7 +392,7 @@
     // No, draw the bar as background color overlayed with a mostly
     // ... transparent version of the passed color
     CGColorRef  fillClr = CGColorCreateCopyWithAlpha(a_clr.CGColor, 0.2f);
-    CGContextSetFillColorWithColor(a_ctx, m_clrBackground.CGColor);
+    CGContextSetFillColorWithColor(a_ctx, _backgroundColor.CGColor);
     CGContextFillRect(a_ctx, a_rect);
     CGContextSetFillColorWithColor(a_ctx, fillClr);
     CGContextFillRect(a_ctx, a_rect);

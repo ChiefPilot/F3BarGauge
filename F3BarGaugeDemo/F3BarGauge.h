@@ -1,7 +1,7 @@
 //
 //  F3BarGauge.h
 //
-//  Copyright (c) 2011 by Brad Benson
+//  Copyright (c) 2011-2014 by Brad Benson
 //  All rights reserved.
 //  
 //  Redistribution and use in source and binary forms, with or without 
@@ -38,25 +38,6 @@
 //------------------------------------------------------------------------
 //------------------------------------------------------------------------
 @interface F3BarGauge : UIView
-{
-  @private
-    BOOL        m_fHoldPeak,            // YES = hold peak value enabled
-                m_fLitEffect,           // YES = draw segments with gradient "lit-up" effect
-                m_fReverseDirection;    // YES = top-to-bottom or right-to-left 
-    float       m_flValue,              // Current value being displayed
-                m_flPeakValue,          // Peak value seen since reset
-                m_flMaxLimit,           // Maximum displayable value
-                m_flMinLimit,           // Minimum displayable value    
-                m_flWarnThreshold,      // Warning threshold (segment color specified by m_clrWarning)
-                m_flDangerThreshold;    // Danger threshold (segment color specified by m_clrDanger)
-    int         m_iNumBars;             // Number of segments
-    UIColor     *m_clrOuterBorder,      // Color of outer border
-                *m_clrInnerBorder,      // Color of inner border
-                *m_clrBackground,       // Background color of gauge
-                *m_clrNormal,           // Normal segment color
-                *m_clrWarning,          // Warning segment color
-                *m_clrDanger;           // Danger segment color
-}
 
 @property (readwrite, nonatomic)  float     value;
 @property (readwrite, nonatomic)  float     warnThreshold;
@@ -68,12 +49,12 @@
 @property (readwrite, nonatomic)  BOOL      holdPeak;
 @property (readwrite, nonatomic)  BOOL      litEffect;
 @property (readwrite, nonatomic)  BOOL      reverse;
-@property (readwrite, retain)     UIColor   *outerBorderColor;
-@property (readwrite, retain)     UIColor   *innerBorderColor;
-@property (readwrite, retain)     UIColor   *backgroundColor;
-@property (readwrite, retain)     UIColor   *normalBarColor;
-@property (readwrite, retain)     UIColor   *warningBarColor;
-@property (readwrite, retain)     UIColor   *dangerBarColor;
+@property (readwrite, strong)     UIColor   *outerBorderColor;
+@property (readwrite, strong)     UIColor   *innerBorderColor;
+@property (readwrite, strong)     UIColor   *backgroundColor;
+@property (readwrite, strong)     UIColor   *normalBarColor;
+@property (readwrite, strong)     UIColor   *warningBarColor;
+@property (readwrite, strong)     UIColor   *dangerBarColor;
 
 -(void) resetPeak;
 

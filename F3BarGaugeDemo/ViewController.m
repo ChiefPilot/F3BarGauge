@@ -8,22 +8,26 @@
 
 #import "ViewController.h"
 
-@implementation ViewController
-@synthesize horizontalBar;
-@synthesize reversedBar;
-@synthesize verticalBar;
-@synthesize lcdBar;
-@synthesize peakHoldBar;
-@synthesize customThresholdBar;
-@synthesize customRangeBar;
-@synthesize valueSlider;
-@synthesize valueLabel;
+@interface ViewController ()
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
-}
+@property (strong, nonatomic) IBOutlet F3BarGauge *horizontalBar;
+@property (strong, nonatomic) IBOutlet F3BarGauge *reversedBar;
+@property (strong, nonatomic) IBOutlet F3BarGauge *verticalBar;
+@property (strong, nonatomic) IBOutlet F3BarGauge *lcdBar;
+@property (strong, nonatomic) IBOutlet F3BarGauge *peakHoldBar;
+@property (strong, nonatomic) IBOutlet F3BarGauge *customThresholdBar;
+@property (strong, nonatomic) IBOutlet F3BarGauge *customRangeBar;
+@property (strong, nonatomic) IBOutlet UISlider *valueSlider;
+@property (strong, nonatomic) IBOutlet UILabel *valueLabel;
+
+- (IBAction)didChangeValue:(id)sender;
+- (IBAction)didReset:(id)sender;
+@end
+
+
+
+@implementation ViewController
+
 
 #pragma mark - View lifecycle
 
@@ -31,87 +35,52 @@
 {
   [super viewDidLoad];
 
-  reversedBar.reverse = YES;
+  _reversedBar.reverse = YES;
   
-  customThresholdBar.numBars = 15;
-  customThresholdBar.warnThreshold = 0.45;
-  customThresholdBar.dangerThreshold = 0.90;
-  customThresholdBar.normalBarColor = [UIColor blueColor];
-  customThresholdBar.warningBarColor = [UIColor cyanColor];
-  customThresholdBar.dangerBarColor = [UIColor magentaColor];
-  customThresholdBar.outerBorderColor = [UIColor clearColor];
-  customThresholdBar.innerBorderColor = [UIColor clearColor];
+  _customThresholdBar.numBars = 15;
+  _customThresholdBar.warnThreshold = 0.45;
+  _customThresholdBar.dangerThreshold = 0.90;
+  _customThresholdBar.normalBarColor = [UIColor blueColor];
+  _customThresholdBar.warningBarColor = [UIColor cyanColor];
+  _customThresholdBar.dangerBarColor = [UIColor magentaColor];
+  _customThresholdBar.outerBorderColor = [UIColor clearColor];
+  _customThresholdBar.innerBorderColor = [UIColor clearColor];
   
-  customRangeBar.numBars = 20;
-  customRangeBar.minLimit = 0.40;
-  customRangeBar.maxLimit = 0.60;
+  _customRangeBar.numBars = 20;
+  _customRangeBar.minLimit = 0.40;
+  _customRangeBar.maxLimit = 0.60;
   
-  peakHoldBar.numBars = 10;
-  peakHoldBar.holdPeak = YES;
+  _peakHoldBar.numBars = 10;
+  _peakHoldBar.holdPeak = YES;
 
-  lcdBar.numBars = 20;
-  lcdBar.litEffect = NO;
+  _lcdBar.numBars = 20;
+  _lcdBar.litEffect = NO;
   UIColor *clrBar = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1.0];
-  lcdBar.normalBarColor = clrBar;
-  lcdBar.warningBarColor = clrBar;
-  lcdBar.dangerBarColor = clrBar;
-  lcdBar.backgroundColor = [UIColor clearColor];
-  lcdBar.outerBorderColor = [UIColor clearColor];
-  lcdBar.innerBorderColor = [UIColor clearColor];
+  _lcdBar.normalBarColor = clrBar;
+  _lcdBar.warningBarColor = clrBar;
+  _lcdBar.dangerBarColor = clrBar;
+  _lcdBar.backgroundColor = [UIColor clearColor];
+  _lcdBar.outerBorderColor = [UIColor clearColor];
+  _lcdBar.innerBorderColor = [UIColor clearColor];
 }
 
-- (void)viewDidUnload
-{
-  [self setCustomThresholdBar:nil];
-  [self setCustomRangeBar:nil];
-  [self setValueLabel:nil];
-  [self setReversedBar:nil];
-  [self setHorizontalBar:nil];
-  [self setVerticalBar:nil];
-  [self setValueSlider:nil];
-  [self setLcdBar:nil];
-  [self setPeakHoldBar:nil];
-  
-  [super viewDidUnload];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-  return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
-
-- (void)dealloc {
-  [horizontalBar release];
-  [verticalBar release];
-  [valueSlider release];
-  [lcdBar release];
-  [lcdBar release];
-  [peakHoldBar release];
-  [customThresholdBar release];
-  [customRangeBar release];
-  [valueLabel release];
-  [reversedBar release];
-  [super dealloc];
-}
 
 - (IBAction)didChangeValue:(id)sender {
   // Update the text label
-  valueLabel.text = [NSString stringWithFormat:@"%0.02f", valueSlider.value];
+  _valueLabel.text = [NSString stringWithFormat:@"%0.02f", _valueSlider.value];
   
   // Update the bar gauges
-  horizontalBar.value = valueSlider.value;
-  reversedBar.value = valueSlider.value;
-  lcdBar.value = valueSlider.value;
-  verticalBar.value = valueSlider.value;
-  peakHoldBar.value = valueSlider.value;
-  customThresholdBar.value = valueSlider.value;
-  customRangeBar.value = valueSlider.value;
+  _horizontalBar.value = _valueSlider.value;
+  _reversedBar.value = _valueSlider.value;
+  _lcdBar.value = _valueSlider.value;
+  _verticalBar.value = _valueSlider.value;
+  _peakHoldBar.value = _valueSlider.value;
+  _customThresholdBar.value = _valueSlider.value;
+  _customRangeBar.value = _valueSlider.value;
 
 }
 
 - (IBAction)didReset:(id)sender {
-  [peakHoldBar resetPeak];
+  [_peakHoldBar resetPeak];
 }
 @end
