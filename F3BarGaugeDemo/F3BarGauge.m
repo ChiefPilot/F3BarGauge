@@ -206,7 +206,7 @@
 -(void) setDefaults
 {
   // Set view background to clear
-  [self setBackgroundColor:[UIColor clearColor]];
+  self.backgroundColor = [UIColor clearColor];
   
   // Configure limits
   _maxLimit  = 1.0f;
@@ -221,8 +221,8 @@
   m_iPeakBarIdx       = -1;
   _litEffect        = YES;
   _reverse = NO;
-  [self setWarnThreshold:0.60f];
-  [self setDangerThreshold:0.80f];
+  self.warnThreshold = 0.60f;
+  self.dangerThreshold = 0.80f;
   
   // Set default colors
   _backgroundColor       = [UIColor blackColor];
