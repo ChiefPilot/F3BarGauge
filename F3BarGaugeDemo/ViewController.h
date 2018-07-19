@@ -6,9 +6,8 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "F3BarGauge.h"
+#import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-
 @end
