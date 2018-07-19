@@ -3,10 +3,9 @@ F3BarGauge
 
 Welcome!
 --------
-This demo contains the LED bar gauge control for iOS.   It has been
-tested on iOS 6.x and 7.x on iTouch, iPhone, and iPad devices.
+This demo contains the LED bar gauge control for iOS 8.0 and above.
 
-![Screenshot](https://raw.github.com/ChiefPilot/F3BarGauge/master/F3BarGauge.png "Screenshot of Component Demo App")
+![Screenshot](F3BarGauge.png "Screenshot of Component Demo App")
 
 If you find this control of use (or find bugs), I'd love to hear
 from you!   Drop a note to brad@flightiii.com with questions, comments,

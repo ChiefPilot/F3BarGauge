@@ -29,6 +29,8 @@
 		E10B502F21003821009E78AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E10B503621003938009E78AE /* F3BarGauge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F3BarGauge.h; sourceTree = "<group>"; };
 		E10B503721003938009E78AE /* F3BarGauge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F3BarGauge.m; sourceTree = "<group>"; };
+		E1E01121210061BD00BE7089 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E1E01122210061BD00BE7089 /* F3BarGauge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = F3BarGauge.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,8 @@
 		E10B501421003820009E78AE = {
 			isa = PBXGroup;
 			children = (
+				E1E01122210061BD00BE7089 /* F3BarGauge.png */,
+				E1E01121210061BD00BE7089 /* README.md */,
 				E1991AC421005EE500B697D2 /* F3BarGauge */,
 				E10B501F21003820009E78AE /* F3BarGaugeDemo */,
 				E10B501E21003820009E78AE /* Products */,
