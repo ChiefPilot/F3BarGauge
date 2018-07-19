@@ -62,6 +62,9 @@
   _lcdBar.backgroundColor = [UIColor clearColor];
   _lcdBar.outerBorderColor = [UIColor clearColor];
   _lcdBar.innerBorderColor = [UIColor clearColor];
+    
+  _valueSlider.value = 0.5;
+  [self didChangeValue:_valueSlider];
 }
 
 
