@@ -121,11 +121,19 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQy-83-SHy">
-                                        <rect key="frame" x="286" y="292" width="66" height="18"/>
+                                        <rect key="frame" x="286" y="286" width="66" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="66" id="xcM-bV-Ecv"/>
                                         </constraints>
-                                        <state key="normal" title="Reset" backgroundImage="White"/>
+                                        <state key="normal" title="Reset"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="didReset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JjI-F8-lrq"/>
                                         </connections>
@@ -224,6 +232,7 @@
                         <outlet property="horizontalBar" destination="RIq-1N-CWm" id="2aS-j6-bqB"/>
                         <outlet property="lcdBar" destination="LRl-az-NbZ" id="9Cf-gx-4nI"/>
                         <outlet property="peakHoldBar" destination="Aey-yv-ZF6" id="d6e-yD-Mwd"/>
+                        <outlet property="resetButton" destination="aQy-83-SHy" id="gxJ-lz-fya"/>
                         <outlet property="reversedBar" destination="btL-EY-2KF" id="YeY-2S-FRp"/>
                         <outlet property="valueLabel" destination="Q1t-tH-fzA" id="ZuB-QX-rwz"/>
                         <outlet property="valueSlider" destination="0eE-j6-Bbj" id="KuM-pC-Ka4"/>
@@ -234,7 +243,4 @@
             </objects>
         </scene>
     </scenes>
-    <resources>
-        <image name="White" width="5" height="5"/>
-    </resources>
 </document>

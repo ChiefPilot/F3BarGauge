@@ -10,15 +10,16 @@
 
 @interface ViewController ()
 
-@property (strong, nonatomic) IBOutlet F3BarGauge *horizontalBar;
-@property (strong, nonatomic) IBOutlet F3BarGauge *reversedBar;
-@property (strong, nonatomic) IBOutlet F3BarGauge *verticalBar;
-@property (strong, nonatomic) IBOutlet F3BarGauge *lcdBar;
-@property (strong, nonatomic) IBOutlet F3BarGauge *peakHoldBar;
-@property (strong, nonatomic) IBOutlet F3BarGauge *customThresholdBar;
-@property (strong, nonatomic) IBOutlet F3BarGauge *customRangeBar;
-@property (strong, nonatomic) IBOutlet UISlider *valueSlider;
-@property (strong, nonatomic) IBOutlet UILabel *valueLabel;
+@property (weak, nonatomic) IBOutlet F3BarGauge *horizontalBar;
+@property (weak, nonatomic) IBOutlet F3BarGauge *reversedBar;
+@property (weak, nonatomic) IBOutlet F3BarGauge *verticalBar;
+@property (weak, nonatomic) IBOutlet F3BarGauge *lcdBar;
+@property (weak, nonatomic) IBOutlet F3BarGauge *peakHoldBar;
+@property (weak, nonatomic) IBOutlet F3BarGauge *customThresholdBar;
+@property (weak, nonatomic) IBOutlet F3BarGauge *customRangeBar;
+@property (weak, nonatomic) IBOutlet UISlider *valueSlider;
+@property (weak, nonatomic) IBOutlet UILabel *valueLabel;
+@property (weak, nonatomic) IBOutlet UIButton *resetButton;
 
 - (IBAction)didChangeValue:(id)sender;
 - (IBAction)didReset:(id)sender;
