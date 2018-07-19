@@ -45,6 +45,7 @@
 		E10B501421003820009E78AE = {
 			isa = PBXGroup;
 			children = (
+				E1991AC421005EE500B697D2 /* F3BarGauge */,
 				E10B501F21003820009E78AE /* F3BarGaugeDemo */,
 				E10B501E21003820009E78AE /* Products */,
 			);
@@ -64,8 +65,6 @@
 				E10B502021003820009E78AE /* AppDelegate.h */,
 				E10B502121003820009E78AE /* AppDelegate.m */,
 				E10B502921003821009E78AE /* Assets.xcassets */,
-				E10B503621003938009E78AE /* F3BarGauge.h */,
-				E10B503721003938009E78AE /* F3BarGauge.m */,
 				E10B502E21003821009E78AE /* Info.plist */,
 				E10B502B21003821009E78AE /* LaunchScreen.storyboard */,
 				E10B502F21003821009E78AE /* main.m */,
@@ -74,6 +73,15 @@
 				E10B502421003820009E78AE /* ViewController.m */,
 			);
 			path = F3BarGaugeDemo;
+			sourceTree = "<group>";
+		};
+		E1991AC421005EE500B697D2 /* F3BarGauge */ = {
+			isa = PBXGroup;
+			children = (
+				E10B503621003938009E78AE /* F3BarGauge.h */,
+				E10B503721003938009E78AE /* F3BarGauge.m */,
+			);
+			path = F3BarGauge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
