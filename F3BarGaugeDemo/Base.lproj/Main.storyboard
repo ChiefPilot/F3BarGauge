@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,34 +15,34 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xe-EX-MzE">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Flight III Systems Bar Gauge" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="OtH-ob-G8F">
-                                        <rect key="frame" x="20" y="27" width="335" height="24"/>
+                                        <rect key="frame" x="20" y="27" width="374" height="24"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDU-JS-YVZ" customClass="F3BarGauge">
-                                        <rect key="frame" x="20" y="61" width="40" height="526"/>
+                                        <rect key="frame" x="20" y="61" width="40" height="595"/>
                                         <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="PmB-Vk-sxu"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RIq-1N-CWm" customClass="F3BarGauge">
-                                        <rect key="frame" x="77" y="80" width="275" height="25"/>
+                                        <rect key="frame" x="77" y="80" width="314" height="25"/>
                                         <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="yly-QJ-tBQ"/>
                                         </constraints>
                                     </view>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="0eE-j6-Bbj">
-                                        <rect key="frame" x="75" y="599" width="225" height="29"/>
+                                        <rect key="frame" x="75" y="668" width="264" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="m3Y-SU-ULu"/>
                                         </constraints>
@@ -51,7 +51,7 @@
                                         </connections>
                                     </slider>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Value" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="akV-aE-a0m">
-                                        <rect key="frame" x="20" y="606" width="42" height="14"/>
+                                        <rect key="frame" x="20" y="675" width="42" height="14"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -63,7 +63,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWv-LF-Wo4" customClass="F3BarGauge">
-                                        <rect key="frame" x="77" y="184" width="275" height="25"/>
+                                        <rect key="frame" x="77" y="184" width="314" height="25"/>
                                         <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="4PA-po-Gb8"/>
@@ -76,7 +76,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="btL-EY-2KF" customClass="F3BarGauge">
-                                        <rect key="frame" x="77" y="132" width="275" height="25"/>
+                                        <rect key="frame" x="77" y="132" width="314" height="25"/>
                                         <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="qGE-WM-HBo"/>
@@ -89,7 +89,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ylu-Cd-ZpH" customClass="F3BarGauge">
-                                        <rect key="frame" x="77" y="236" width="275" height="25"/>
+                                        <rect key="frame" x="77" y="236" width="314" height="25"/>
                                         <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="4iv-fM-h4j"/>
@@ -102,7 +102,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aey-yv-ZF6" customClass="F3BarGauge">
-                                        <rect key="frame" x="77" y="288" width="205" height="25"/>
+                                        <rect key="frame" x="77" y="288" width="244" height="25"/>
                                         <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="Dxs-Gl-ucL"/>
@@ -121,7 +121,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQy-83-SHy">
-                                        <rect key="frame" x="286" y="286" width="66" height="30"/>
+                                        <rect key="frame" x="325" y="286" width="66" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="66" id="xcM-bV-Ecv"/>
                                         </constraints>
@@ -139,7 +139,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Q1t-tH-fzA">
-                                        <rect key="frame" x="307" y="597" width="45" height="30"/>
+                                        <rect key="frame" x="346" y="666" width="45" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="JOK-Yh-CGZ"/>
                                             <constraint firstAttribute="height" constant="30" id="NUL-x9-bOA"/>
@@ -149,10 +149,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99a-sG-hK3">
-                                        <rect key="frame" x="77" y="348" width="275" height="40"/>
+                                        <rect key="frame" x="77" y="348" width="314" height="40"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRl-az-NbZ" customClass="F3BarGauge">
-                                                <rect key="frame" x="10" y="5" width="255" height="30"/>
+                                                <rect key="frame" x="10" y="5" width="294" height="30"/>
                                                 <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                         </subviews>
